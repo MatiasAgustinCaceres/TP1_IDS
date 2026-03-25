@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Definición de variables de rutas.
 BASE_DIR="$HOME/EPNro1"
 ENTRADA="$BASE_DIR/entrada"
 SALIDA="$BASE_DIR/salida"
@@ -12,6 +13,7 @@ if [ -z "$FILENAME" ]; then
     exit 1
 fi
 
+# Definición del archivo de salida.
 ARCHIVO_SALIDA="$SALIDA/$FILENAME.txt"
 
 # Parámetro opcional -d
@@ -29,6 +31,7 @@ if [ "$1" == "-d" ]; then
     exit 0
 fi
 
+# Menu de opciones.
 while true; do
     echo ""
     echo "===== MENÚ ====="
@@ -42,8 +45,10 @@ while true; do
 
     read -p "Seleccione una opción: " opcion
 
+#Desarrollo de cada opción.
     case $opcion in
         1)
+            #Crea los directorios.
             mkdir -p "$ENTRADA" "$SALIDA" "$PROCESADO"
             echo "Entorno creado en $BASE_DIR"
 
@@ -75,6 +80,7 @@ EOF
             chmod +x "$BASE_DIR/consolidar.sh"
             ;;
         2)
+            #Verifica si existe un proceso. Si no existe lo ejecuta.
             if [ -f "$PID_FILE" ]; then
                 echo "El proceso ya está corriendo."
             else
@@ -84,6 +90,7 @@ EOF
             fi
             ;;
         3)
+            #Ordena por padrón.
             if [ -f "$ARCHIVO_SALIDA" ]; then
                 sort -n "$ARCHIVO_SALIDA"
             else
@@ -91,6 +98,7 @@ EOF
             fi
             ;;
         4)
+            #Ormeda por notas.
             if [ -f "$ARCHIVO_SALIDA" ]; then
                 sort -k4 -nr "$ARCHIVO_SALIDA" | head -n 10
             else
@@ -98,6 +106,7 @@ EOF
             fi
             ;;
         5)
+            #Busca un padrón.
             if [ -f "$ARCHIVO_SALIDA" ]; then
                 read -p "Ingrese padrón: " padron
                 grep "^$padron " "$ARCHIVO_SALIDA"
@@ -106,12 +115,13 @@ EOF
             fi
             ;;
         6)
+            #Finaliza el loop.
             echo "Saliendo..."
             exit 0
             ;;
         *)
+            #Opción en caso de que no se elijan numeros del 1 al 6.
             echo "Opción inválida"
             ;;
     esac
 done
-
