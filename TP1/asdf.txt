@@ -1,0 +1,6 @@
+123456 Martin Gomez mgomez@fi.uba.ar 7
+234567 Ana Torres atorres@fi.uba.ar 9
+345678 Luis Ramirez lramirez@fi.uba.ar 6
+456789 Sofia Castro scastro@fi.uba.ar 8
+567890 Diego Herrera dherrera@fi.uba.ar 5
+678901 Valeria Ruiz vruiz@fi.uba.ar 10

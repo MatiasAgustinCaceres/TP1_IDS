@@ -1,0 +1,6 @@
+112233 Pablo Medina pmedina@fi.uba.ar 4
+223344 Carla Rojas crojas@fi.uba.ar 8
+334455 Andres Silva asilva@fi.uba.ar 7
+445566 Natalia Vega nvega@fi.uba.ar 9
+556677 Tomas Acosta tacosta@fi.uba.ar 6
+667788 Laura Mendez lmendez@fi.uba.ar 10
